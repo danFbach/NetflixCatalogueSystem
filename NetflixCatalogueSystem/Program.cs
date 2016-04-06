@@ -10,6 +10,7 @@ namespace NetflixCatalogueSystem
     {
         static void Main(string[] args)
         {
+            view view = new view();
         }
     }
 }
