@@ -8,6 +8,10 @@ namespace NetflixCatalogueSystem
 {
     public class episode
     {
+        public void rating()
+        {
+
+        }
     }
 }
 //  Episode

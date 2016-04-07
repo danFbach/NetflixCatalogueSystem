@@ -8,19 +8,46 @@ namespace NetflixCatalogueSystem
 {
     public class genre
     {
-        List<title> titles = new List<title>();
-        
-        public void titleIterator()
+        public List<title> titles = new List<title>();
+
+        [Flags]
+        public enum genreNum
         {
+            Action = 1,
+            Comedy = 2,
+            Romance = 4
+        }
+        public static genre operator +(genre genre1 , genre genre2)
+        {
+            int actionstuff = Convert.ToInt16(genreNum.Action);
+
+            genre tempGenre = genreNum.Action + genre2;
+            return tempGenre;
+        }
+        public static genre operator +(genre choice,title titleIn)
+        {
+            int genreNumb = titleIn.genre1;
+            genre newGenre = genreNum(choice) + genre1;
+            return newGenre;            
+        }
+        public int titleIterator(title titleIn)
+        {
+            List<title> tempTitles = new List<title>();
             foreach(title movie in titles)
             {
-
-            }
+                if (movie.Equals(titleIn))
+                {
+                    return movie.genre1;
+                }
+            }return 0;
         }
-
+        public void addTitlesToList(title title1, genreNum titleGenres)
+        {
+            titles.Add(new title(title1, titleGenres));            
+        }
     }
 }
-//  Genre
+//  Genre 
 //      -Contains a list of Titles
 //      -Implement custom iterator to iterate over those Titles
 //      -Overload plus(+) operator to take in two Genres and return the aggregated Genre.

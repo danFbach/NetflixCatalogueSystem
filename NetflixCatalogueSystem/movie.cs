@@ -6,8 +6,23 @@ using System.Threading.Tasks;
 
 namespace NetflixCatalogueSystem
 {
-    public class movie : title
+    public abstract class movie : title
     {
+        
+        title movieTitle;
+        public movie(title title1, Enum genre1) : base(title1,genre1)
+        {
+            
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+        public void duration()
+        {
+
+        }
     }
 }
 //  Movie(Inherits from Title)

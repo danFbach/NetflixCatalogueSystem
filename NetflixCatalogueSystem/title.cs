@@ -8,6 +8,26 @@ namespace NetflixCatalogueSystem
 {
     public class title
     {
+        public title mainTitle;
+        public int genre1;
+        genre genre = new genre();
+        public title(title title1, Enum titleGenre)
+        {
+            mainTitle = title1;
+        }
+        string titleGenre;
+        string strTitle;
+        public static title operator +(title title1, title title2)
+        {
+            title tempTitle = title1 + title2;
+            return tempTitle;
+        }
+        public void name()
+        {
+        }
+        public virtual void rating()
+        {            
+        }
     }
 }
 //  Title

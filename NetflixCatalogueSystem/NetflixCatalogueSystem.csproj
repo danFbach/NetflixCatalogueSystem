@@ -47,6 +47,7 @@
     <Compile Include="comedy.cs" />
     <Compile Include="episode.cs" />
     <Compile Include="genre.cs" />
+    <Compile Include="menu.cs" />
     <Compile Include="movie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,6 +9,19 @@ namespace NetflixCatalogueSystem
     public class show : title
     {
         episode episode = new episode();
+        List<episode> episodes = new List<episode>();
+        public show(title title1, Enum genre1) : base(title1,genre1)
+        {
+
+        }
+        public override void rating()
+        {
+
+        }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
 //  Show(inherits from Title)
