@@ -8,10 +8,10 @@ namespace NetflixCatalogueSystem
 {
     public class title
     {
-        public title mainTitle;
+        public string mainTitle;
         public int genre1;
         genre genre = new genre();
-        public title(title title1, Enum titleGenre)
+        public title(string title1, Enum titleGenre)
         {
             mainTitle = title1;
         }

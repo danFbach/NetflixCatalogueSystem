@@ -9,29 +9,32 @@ namespace NetflixCatalogueSystem
     public class genre
     {
         public List<title> titles = new List<title>();
+        public genre()
+        {
 
-        [Flags]
+        }
         public enum genreNum
         {
-            Action = 1,
+            action = 1,
             Comedy = 2,
             Romance = 4
         }
-        public static genre operator +(genre genre1 , genre genre2)
+        public static string operator +(genre genre1, genre genre2)
         {
-            int actionstuff = Convert.ToInt16(genreNum.Action);
-
-            genre tempGenre = genreNum.Action + genre2;
-            return tempGenre;
+            foreach(title movie in genre1)
+            {
+                Console.Write(genre1.GetType());
+            }
         }
         public static genre operator +(genre choice,title titleIn)
         {
             int genreNumb = titleIn.genre1;
-            genre newGenre = genreNum(choice) + genre1;
+            genre newGenre = new genre();
             return newGenre;            
-        }
+        }                                                                            
         public int titleIterator(title titleIn)
         {
+            int genreNumberIn;
             List<title> tempTitles = new List<title>();
             foreach(title movie in titles)
             {
@@ -41,9 +44,35 @@ namespace NetflixCatalogueSystem
                 }
             }return 0;
         }
-        public void addTitlesToList(title title1, genreNum titleGenres)
+        public string aggregatedGenre(int genreNumberIn)
         {
-            titles.Add(new title(title1, titleGenres));            
+            int actionNum = (int)genreNum.action;
+            int romanceNum = (int)genreNum.Romance;
+            int comedyNum = (int)genreNum.Comedy;
+            string genreName = "";
+            if (genreNumberIn >= romanceNum)
+            {
+                genreName += genreNum.Romance + " ";
+                genreNumberIn -= 4;
+            }
+            if (genreNumberIn >= comedyNum)
+            {
+                genreName += genreNum.Comedy + " ";
+                genreNumberIn -= 2;
+            }
+            if (genreNumberIn >= actionNum)
+            {
+                genreName += genreNum.action;
+                genreNumberIn -= 1;
+            }
+            return genreName;
+        }
+        public void addTitlesToList(string title1, Enum titleGenre)
+        {
+            for(int i = 0;i < 20; i++)
+            {
+                titles.Add(new title(title1, titleGenre));
+            }
         }
     }
 }

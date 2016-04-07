@@ -8,8 +8,6 @@ namespace NetflixCatalogueSystem
 {
     public class view
     {
-        title title1;
-        Enum genre1;
         public view()
         {
             
@@ -28,7 +26,6 @@ namespace NetflixCatalogueSystem
         }
         public void display()
         {
-            title title = new title(title1, genre1);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace NetflixCatalogueSystem
     {
         episode episode = new episode();
         List<episode> episodes = new List<episode>();
-        public show(title title1, Enum genre1) : base(title1,genre1)
+        public show(string title1, Enum genre1) : base(title1,genre1)
         {
 
         }

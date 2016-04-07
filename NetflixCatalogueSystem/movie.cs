@@ -10,7 +10,7 @@ namespace NetflixCatalogueSystem
     {
         
         title movieTitle;
-        public movie(title title1, Enum genre1) : base(title1,genre1)
+        public movie(string title1, Enum genre1) : base(title1,genre1)
         {
             
         }
