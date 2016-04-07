@@ -10,3 +10,5 @@ namespace NetflixCatalogueSystem
     {
     }
 }
+//  Episode
+//      -Rating field

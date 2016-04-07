@@ -12,3 +12,5 @@ namespace NetflixCatalogueSystem
         title title = new title();
     }
 }
+//  View
+//    -Prints out the various Genres and their Titles
