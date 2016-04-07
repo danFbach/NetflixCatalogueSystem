@@ -9,15 +9,7 @@ namespace NetflixCatalogueSystem
     class Program
     {
         static void Main(string[] args)
-        {
-            
-            genre add = new genre();
-
-            Console.WriteLine("7 all, 6 romantic com, 5 romance action, 4 romance, 3 comedy action, 2 comedy, 1 action \nPick number.");
-            int choice;
-            int.TryParse(Console.ReadLine(), out choice);
-            add.test(choice);
-            Console.ReadKey();
+        {            
         }
     }
 }

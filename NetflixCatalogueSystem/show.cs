@@ -10,17 +10,18 @@ namespace NetflixCatalogueSystem
     {
         episode episode = new episode();
         List<episode> episodes = new List<episode>();
-        public show(string title1, Enum genre1) : base(title1,genre1)
+        public show(string name, int rating)
         {
-
-        }
-        public override void rating()
-        {
-
+            this.rating = rating;
+            this.name = name;
         }
         public override string ToString()
         {
             return base.ToString();
+        }
+        public void test()
+        {
+            
         }
     }
 }

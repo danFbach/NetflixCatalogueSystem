@@ -8,24 +8,13 @@ namespace NetflixCatalogueSystem
 {
     public class title
     {
-        public string mainTitle;
-        public string titleGenre;
-        public double rating;
-        genre genre = new genre();
-        public title(string mainTitle, string titleGenre, double rating)
-        {
-            this.titleGenre = titleGenre;
-            this.rating = rating;
-            this.mainTitle = mainTitle;
-        }
+        public string name;
+        public int rating;
         public static title operator +(title title1, title title2)
         {
             title tempTitle = title1 + title2;
             return tempTitle;
-        }
-        public void name()
-        {
-        }
+        }      
     }
 }
 //  Title
