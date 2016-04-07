@@ -9,14 +9,15 @@ namespace NetflixCatalogueSystem
     public class title
     {
         public string mainTitle;
-        public int genre1;
+        public string titleGenre;
+        public double rating;
         genre genre = new genre();
-        public title(string title1, Enum titleGenre)
+        public title(string mainTitle, string titleGenre, double rating)
         {
-            mainTitle = title1;
+            this.titleGenre = titleGenre;
+            this.rating = rating;
+            this.mainTitle = mainTitle;
         }
-        string titleGenre;
-        string strTitle;
         public static title operator +(title title1, title title2)
         {
             title tempTitle = title1 + title2;
@@ -24,9 +25,6 @@ namespace NetflixCatalogueSystem
         }
         public void name()
         {
-        }
-        public virtual void rating()
-        {            
         }
     }
 }

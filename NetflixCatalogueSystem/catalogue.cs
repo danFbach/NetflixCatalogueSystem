@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetflixCatalogueSystem
 {
-    public class action : genre
+    class catalogue
     {
     }
 }
