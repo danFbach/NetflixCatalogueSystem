@@ -10,13 +10,12 @@ namespace NetflixCatalogueSystem
     {
         episode showEpisodes = new episode();
         List<episode> episodes = new List<episode>();
-        public show(string name, int rating, genre theGenre)
+        public show(string name, int rating)
         {
             List<episode> episodes = new List<episode>();
             this.episodes = episodes;
             this.rating = rating;
-            this.name = name;
-            this.theGenre = theGenre;            
+            this.name = name;         
         }
         public override string ToString()
         {

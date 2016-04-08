@@ -8,10 +8,9 @@ namespace NetflixCatalogueSystem
 {
     public class title
     {
-        public genre genreForTitle = new genre("");        
+        public catalogue newCatalogue = new catalogue();
         public string name;
         public int? rating;
-        public genre theGenre;
         public title(string name, int? rating)
         {
             this.name = name;
@@ -25,14 +24,7 @@ namespace NetflixCatalogueSystem
         public static title operator +(title title1, title title2)
         {
             return new title("",0);
-        }      
-        public void titleIterator()
-        {
-            foreach(title video in genreForTitle.titles)
-            {
-                Console.WriteLine(video.theGenre);
-            }
-        }
+        }              
     }
 }
 //  Title
