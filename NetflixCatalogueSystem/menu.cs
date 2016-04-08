@@ -12,7 +12,6 @@ namespace NetflixCatalogueSystem
         {
             view viewResults = new view();
             int menuChoice;
-
             Console.WriteLine("Please select an option. \n1) Get titles via 2 genres. \n2) Get titles via 1 title and 1 genre. \n3) Get new genre via 2 titles.");
             bool check = int.TryParse(Console.ReadLine(), out menuChoice);
             if (check.Equals(false)) { Console.WriteLine("Invalid selection."); mainMenu();  }         

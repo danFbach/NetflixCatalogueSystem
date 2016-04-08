@@ -9,15 +9,16 @@ namespace NetflixCatalogueSystem
     public class movie : title
     {
         public int duration;
-        public movie(string name, int duration, int rating)
+        public movie(string name, int duration, int rating, genre theGenre)
         {
             this.duration = duration;
             this.rating = rating;
             this.name = name;
+            this.theGenre = theGenre;
         }
         public override string ToString()
         {
-            return base.ToString();
+            return (String.Format("{0}: {1}m", name, duration));
         }
     }
 }

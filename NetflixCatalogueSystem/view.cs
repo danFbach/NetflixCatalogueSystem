@@ -9,20 +9,16 @@ namespace NetflixCatalogueSystem
     public class view
     {
         public view()
-        {
-            
+        {            
         }
         public void twoGenres()
         {
-
         }
         public void titleGenre()
         {
-
         }
         public void twoTitles()
         {
-
         }
         public void display()
         {

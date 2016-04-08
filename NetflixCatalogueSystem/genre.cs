@@ -7,35 +7,42 @@ using System.Threading.Tasks;
 namespace NetflixCatalogueSystem
 {
     public class genre
-    {
+   {
+        public string g1;
+        public string g2;
         public List<title> titles = new List<title>();
-        public genre()
+        public genre comedy;
+        public genre action;
+        public genre romance;
+        public genre(string g1)
+        {
+            this.g1 = g1;
+        }
+        public void moreStuff()
         {
         }
-        public enum genreNum
+        public static genre operator +(genre genre1,genre genre2)
         {
-            action = 1,
-            Comedy = 2,
-            Romance = 4
+            return new genre(genre1.g1 + genre2.g2);
         }
-        
-        public static genre operator +(, genre genre2)
-        { 
+        public static genre operator +(genre genre1,title titleIn)
+        {
             return genre1;
         }
-        public static genre operator +(genre choice,title titleIn)
+        public void newShows()
         {
-            return choice;
-        }                                                                            
-        public void titleIterator(title titleIn)
-        {
-            foreach(movie movies in titles)
-            {
-                
-            }
-            
+            titles.Add(new movie("007", 120, 4, action));
+            titles.Add(new movie("Happy Gilmore", 90, 4, comedy));
+            titles.Add(new show("South Park", 5, comedy));
+            titles.Add(new movie("Phantom of the Opera", 180, 3, romance));
         }
-        
+        public void titleIterator()
+        {
+                foreach(title video in titles)
+            {
+                    Console.WriteLine(video.name);                
+            }            
+        }        
     }
 }
 //  Genre 

@@ -8,20 +8,29 @@ namespace NetflixCatalogueSystem
 {
     public class show : title
     {
-        episode episode = new episode();
+        episode showEpisodes = new episode();
         List<episode> episodes = new List<episode>();
-        public show(string name, int rating)
+        public show(string name, int rating, genre theGenre)
         {
+            List<episode> episodes = new List<episode>();
+            this.episodes = episodes;
             this.rating = rating;
             this.name = name;
+            this.theGenre = theGenre;            
         }
         public override string ToString()
         {
-            return base.ToString();
+            return (String.Format("{0}: {1} episodes", name, episodes.Count));
         }
-        public void test()
+        public void averageRating()
         {
-            
+            int? rating = 0;
+            foreach(episode video in episodes)
+            {
+                rating += video.rating;
+            }
+            rating = (rating / episodes.Count);
+            this.rating = rating;
         }
     }
 }
