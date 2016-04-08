@@ -11,9 +11,11 @@ namespace NetflixCatalogueSystem
         public string g1;
         public string g2;
         public List<title> titles = new List<title>();
+
         public genre comedy;
         public genre action;
         public genre romance;
+
         public genre(string g1)
         {
             this.g1 = g1;
@@ -21,11 +23,11 @@ namespace NetflixCatalogueSystem
         public void moreStuff()
         {
         }
-        public static genre operator +(genre genre1,genre genre2)
+        public static genre operator +(genre genre1, genre genre2)
         {
             return new genre(genre1.g1 + genre2.g2);
         }
-        public static genre operator +(genre genre1,title titleIn)
+        public static genre operator +(genre genre1, title titleIn)
         {
             return genre1;
         }
@@ -34,7 +36,11 @@ namespace NetflixCatalogueSystem
             titles.Add(new movie("007", 120, 4, action));
             titles.Add(new movie("Happy Gilmore", 90, 4, comedy));
             titles.Add(new show("South Park", 5, comedy));
+            titles.Add(new movie("Hellboy", 120, 4, action + comedy));
+            titles.Add(new movie("50 first dates", 90, 3, romance + comedy));
+            titles.Add(new movie("Live free or Die Hard", 120, 4, action));
             titles.Add(new movie("Phantom of the Opera", 180, 3, romance));
+            titles.Add(new movie("The WaterBoy", 90, 3, comedy));
         }
         public void titleIterator()
         {
@@ -83,13 +89,9 @@ namespace NetflixCatalogueSystem
 //{
 //    for (int i = 0; i < 20; i++)
 //    {
-//        titles.Add(new movie("Hellboy", 120, 4, 1));
 //        titles.Add(new movie("007", 90, 4, 5));
 //        titles.Add(new movie("Caddy Shack", 100, 3, 2));
 //        titles.Add(new movie("Phantom of the Opera", 160, 4, 4));
-//        titles.Add(new movie("50 first dates", 90, 3, 6));
-//        titles.Add(new movie("The WaterBoy", 90, 3, 2));
-//        titles.Add(new movie("Live free or Die Hard", 120, 4, 1));
 //        titles.Add(new movie("Ironman", 100, 5, 1));
 //        titles.Add(new movie("Mr.Deeds", 90, 3, 6));
 //    }
