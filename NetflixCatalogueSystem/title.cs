@@ -10,6 +10,7 @@ namespace NetflixCatalogueSystem
     {     
         public string name;
         public int? rating;
+        //public Title currentGenre;
         public Title(string name, int? rating)
         {
             this.name = name;
@@ -22,10 +23,10 @@ namespace NetflixCatalogueSystem
         }
         public static Genre operator +(Title title1, Title title2)
         {
-            Genre genre = new Genre(title1.name + title2.name);
-            genre.titles.Add(title1);
-            genre.titles.Add(title2);
-            return genre;
+            Genre newGenre = new Genre(title1.name + title2.name);
+            newGenre.titles.Add(title1);
+            newGenre.titles.Add(title2);
+            return newGenre;
         }              
     }
 }

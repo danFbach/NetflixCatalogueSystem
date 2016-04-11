@@ -7,13 +7,7 @@ using System.Threading.Tasks;
 namespace NetflixCatalogueSystem
 {
     public class View {
-            Catalogue start = new Catalogue();
-        public View()
-        {
-            start.actionTitles();
-            start.comedies();
-            start.Romantic();    
-        }
+            Catalogue catalogue = new Catalogue();
         public void twoTitles()
         {
             listTitles();
@@ -22,15 +16,24 @@ namespace NetflixCatalogueSystem
             Genre newGenre = selection1 + selection2;
             foreach(Title video in newGenre.titles)
             {
-                Console.WriteLine(video);
+                if (catalogue.comedy.titles.Contains(video))
+                {
+                    Console.Write("Comedy ");
+                }
+                else if (catalogue.action.titles.Contains(video))
+                {
+                    Console.Write("Action ");
+                }
+                else if (catalogue.romantic.titles.Contains(video))
+                {                   
+                    Console.Write("Romantic ");
+                }
             }
-            
-
         }
         public void oneGenreOneTitle()
         {
             string genreChoice = selectGenre();
-            Genre genre1 = genreReturn(genreChoice);
+            Genre genre1 = getGenre(genreChoice);
             listTitles();
             Title selection = titleSelection();
             Genre newGenre = genre1 + selection;
@@ -42,25 +45,25 @@ namespace NetflixCatalogueSystem
         public void twoGenres()
         {
             string genreChoice1 = selectGenre();
-            Genre Genre1 = genreReturn(genreChoice1);
+            Genre Genre1 = getGenre(genreChoice1);
             string genreChoice2 = selectGenre();
-            Genre Genre2 = genreReturn(genreChoice2);
+            Genre Genre2 = getGenre(genreChoice2);
             Genre newGenre = Genre1 + Genre2;
             foreach (Title video in newGenre.titles)
             {
                 Console.WriteLine(video);
             }
         }
-        public Genre genreReturn(string genreChoice)
+        public Genre getGenre(string genreChoice)
         {
             switch (genreChoice)
             {
                 case ("comedy"):
-                    return start.comedy;
+                    return catalogue.comedy;
                 case ("action"):
-                    return start.action;
+                    return catalogue.action;
                 case ("romantic"):
-                    return start.romantic;
+                    return catalogue.romantic;
                 default:
                     return null;
             }
@@ -83,7 +86,7 @@ namespace NetflixCatalogueSystem
         public Title titleSelection()
         {
             string titleEntry = "";
-            Genre allGenre = start.comedy + start.action + start.romantic;
+            Genre allGenre = catalogue.comedy + catalogue.action + catalogue.romantic;
             
             Console.WriteLine("Please select one.");
             titleEntry = Console.ReadLine();
@@ -102,7 +105,7 @@ namespace NetflixCatalogueSystem
         public void listTitles()
         {
             Console.WriteLine("Here is a list of available titles. ");
-            Genre allGenre = start.comedy + start.action + start.romantic;
+            Genre allGenre = catalogue.comedy + catalogue.action + catalogue.romantic;
             foreach (Title video in allGenre.titles)
             {
                 Console.WriteLine("{0}, ", video.name);
