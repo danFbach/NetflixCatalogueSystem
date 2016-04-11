@@ -10,9 +10,10 @@ namespace NetflixCatalogueSystem
     {
         static void Main(string[] args)
         {
-            view stuff = new view();
-            stuff.twoGenres();
-            Console.ReadLine();            
+            Console.ForegroundColor = ConsoleColor.White;
+            Menu run = new Menu();
+            run.mainMenu();
+            Console.ReadLine();
         }
     }
 }

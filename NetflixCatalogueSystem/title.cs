@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace NetflixCatalogueSystem
 {
-    public class title
-    {
-        public catalogue newCatalogue = new catalogue();
+    public class Title
+    {     
         public string name;
         public int? rating;
-        public title(string name, int? rating)
+        public Title(string name, int? rating)
         {
             this.name = name;
             this.rating = rating;
         }
-        public title()
+        public Title()
         {
             name = null;
             rating = null;
         }
-        public static title operator +(title title1, title title2)
+        public static Genre operator +(Title title1, Title title2)
         {
-            return new title("",0);
+            Genre genre = new Genre(title1.name + title2.name);
+            genre.titles.Add(title1);
+            genre.titles.Add(title2);
+            return genre;
         }              
     }
 }

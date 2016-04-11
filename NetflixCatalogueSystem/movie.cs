@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace NetflixCatalogueSystem
 {
-    public class movie : title
+    public class Movie : Title
     {
         public int duration;
-        public movie(string name, int duration, int rating)
+        public Movie(string name, int duration, int rating)
         {
             this.duration = duration;
             this.rating = rating;

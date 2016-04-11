@@ -6,28 +6,34 @@ using System.Threading.Tasks;
 
 namespace NetflixCatalogueSystem
 {
-    public class genre
+    public class Genre
    {
-        public List<title> titles = new List<title>();
+        public List<Title> titles = new List<Title>();
         public string newGenre;        
-        public genre(string newGenre)
+        public Genre(string newGenre)
         {
             this.newGenre = newGenre;
         }
-        public static genre operator +(genre genre1, genre genre2)
+        public static Genre operator +(Genre genre1, Genre genre2)
         {
-            return new genre(genre1.newGenre + genre2.newGenre);
-        }            
-        public static genre operator +(genre genre1, title titleIn)
+            Genre genreTemp = new Genre(genre1.newGenre + genre2.newGenre);
+            genreTemp.titles.AddRange(genre1.titles);
+            genreTemp.titles.AddRange(genre2.titles);
+            return genreTemp;
+        }
+        public static Genre operator +(Genre genre1, Title titleIn)
         {
-            return new genre(genre1.newGenre + titleIn.name);
-        }        
+            Genre genreTemp = new Genre(genre1.newGenre + titleIn);
+            genreTemp.titles.AddRange(genre1.titles);
+            genreTemp.titles.Add(titleIn);
+            return genreTemp;
+        }
         public void titleIterator()
         {
-            foreach(title video in titles)
-            {                                 
-            }            
-        }        
+            foreach(Title video in titles)
+            {
+            }
+        }
     }
 }
 //  Genre 
@@ -39,3 +45,4 @@ namespace NetflixCatalogueSystem
 //          o Take in a title, add it to the genre, return an aggregated list.
 //          o For example, title Die Hard and genre Comedy would return a list of all comedy films and Die Hard.
 //      -Create the genres: All, Romance, Action, Comedy
+

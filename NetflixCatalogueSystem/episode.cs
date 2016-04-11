@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace NetflixCatalogueSystem
 {
-    public class episode
-    {
+    public class Episode
+    {        
         public int? rating;
+        public Episode(int? rating)
+        {
+            this.rating = rating;
+        }
     }
 }
 //  Episode

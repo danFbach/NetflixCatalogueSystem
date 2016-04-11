@@ -2,34 +2,47 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace NetflixCatalogueSystem
 {
-    public class show : title
+    public class Show : Title
     {
-        episode showEpisodes = new episode();
-        List<episode> episodes = new List<episode>();
-        public show(string name, int rating)
+        Episode showEpisodes = new Episode(null);
+        List<Episode> episodes = new List<Episode>();
+        new double rating;
+        public Show(string name, int episodeQty)
         {
-            List<episode> episodes = new List<episode>();
-            this.episodes = episodes;
-            this.rating = rating;
-            this.name = name;         
+            episodes = newEpisode(episodeQty);
+            this.name = name;
+            rating = ratingAverage(episodes);
+                     
+        }
+        public double ratingAverage(List<Episode> episodes)
+        {
+            int? tempTotal = 0;
+            foreach (Episode ep in episodes)
+            {
+                tempTotal = tempTotal + ep.rating;
+            }
+            double seriesAverage = Convert.ToDouble(tempTotal / episodes.Count);
+            return seriesAverage;
         }
         public override string ToString()
         {
-            return (String.Format("{0}: {1} episodes", name, episodes.Count));
-        }
-        public void averageRating()
+            return (String.Format("{0}: {1} episodes Series Rating:{2}/10", name, episodes.Count,rating));
+        }        
+        public List<Episode> newEpisode(int episodeLimit)
         {
-            int? rating = 0;
-            foreach(episode video in episodes)
-            {
-                rating += video.rating;
-            }
-            rating = (rating / episodes.Count);
-            this.rating = rating;
+            List<Episode> newEpisodes = new List<Episode>();
+            Random ratingGen = new Random();            
+                for(int numberOfEpisodes = 0;numberOfEpisodes < episodeLimit; numberOfEpisodes++)
+                {
+                    int? newRating = ratingGen.Next(1, 10);
+                    newEpisodes.Add(new Episode(newRating));
+                Thread.Sleep(5);
+                }
+            return newEpisodes;
         }
     }
 }
