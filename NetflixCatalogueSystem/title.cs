@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace NetflixCatalogueSystem
 {
-    public class Title
-    {     
+    public abstract class Title
+    {
         public string name;
         public int? rating;
         //public Title currentGenre;
@@ -30,8 +30,3 @@ namespace NetflixCatalogueSystem
         }              
     }
 }
-//  Title
-//      -Name field
-//      -Rating field
-//      -Overload plus(+) operator to take in two Titles and return an aggregated Genre
-//      -Offer two overloaded constructors: one that takes in all the fields and sets them, another that takes in no fields and sets the internal fields to null.

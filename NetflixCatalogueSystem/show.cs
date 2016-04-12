@@ -48,7 +48,3 @@ namespace NetflixCatalogueSystem
         }
     }
 }
-//  Show(inherits from Title)
-//      -Contains a list of Episodes
-//      -Overrides parent’s Rating to return an aggregated rating of Episode ratings
-//      -Overrides ToString() method to return a string of the name of the show and number of episodes

@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace NetflixCatalogueSystem
 {
-    public class View {
-            Catalogue catalogue = new Catalogue();
+    public class View
+    {
+        Catalogue catalogue = new Catalogue();
         public void twoTitles()
         {
             listTitles();
             Title selection1 = titleSelection();
             Title selection2 = titleSelection();
             Genre newGenre = selection1 + selection2;
-            foreach(Title video in newGenre.titles)
+            foreach (Title video in newGenre.titles)
             {
                 if (catalogue.comedy.titles.Contains(video))
                 {
@@ -25,7 +26,7 @@ namespace NetflixCatalogueSystem
                     Console.Write("Action ");
                 }
                 else if (catalogue.romantic.titles.Contains(video))
-                {                   
+                {
                     Console.Write("Romantic ");
                 }
             }
@@ -37,11 +38,11 @@ namespace NetflixCatalogueSystem
             listTitles();
             Title selection = titleSelection();
             Genre newGenre = genre1 + selection;
-            foreach(Title video in newGenre.titles)
+            foreach (Title video in newGenre.titles)
             {
                 Console.WriteLine(video);
             }
-        }        
+        }
         public void twoGenres()
         {
             string genreChoice1 = selectGenre();
@@ -87,11 +88,11 @@ namespace NetflixCatalogueSystem
         {
             string titleEntry = "";
             Genre allGenre = catalogue.comedy + catalogue.action + catalogue.romantic;
-            
+
             Console.WriteLine("Please select one.");
             titleEntry = Console.ReadLine();
             titleEntry = titleEntry.ToLower();
-            foreach(Title video in allGenre.titles)
+            foreach (Title video in allGenre.titles)
             {
                 string comparison = video.name.ToLower();
                 if (titleEntry.Equals(comparison))
@@ -113,6 +114,3 @@ namespace NetflixCatalogueSystem
         }
     }
 }
-
-//  View
-//    -Prints out the various Genres and their Titles 

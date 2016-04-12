@@ -22,6 +22,3 @@ namespace NetflixCatalogueSystem
         }
     }
 }
-//  Movie(Inherits from Title)
-//      -Duration field
-//      -Overrides ToString() method to return a string of the name and duration of the movie

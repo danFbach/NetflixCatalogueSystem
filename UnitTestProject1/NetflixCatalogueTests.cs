@@ -1,5 +1,4 @@
-﻿
-using NetflixCatalogueSystem;
+﻿using NetflixCatalogueSystem;
 using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -7,7 +6,7 @@ namespace UnitTestProject1
 {
     [TestClass]
     public class NetflixCatalogueTests
-    {        
+    {
         [TestMethod]
         public void twoGenres()
         {
@@ -20,8 +19,7 @@ namespace UnitTestProject1
             testTitles.Add(new Movie("Ironman", 100, 5));
             testTitles.Add(new Movie("007", 90, 4));
             testTitles.Add(new Movie("Hell Boy", 120, 4));
-            testTitles.Add(new Show("Mr.Robot", 10));
-        
+            testTitles.Add(new Show("Mr.Robot", 10));        
             Catalogue catalogue = new Catalogue();
             Genre com = catalogue.comedy;
             Genre act = catalogue.action;
@@ -42,19 +40,14 @@ namespace UnitTestProject1
             testTitles.Add(new Movie("Hell Boy", 120, 4));
             testTitles.Add(new Show("Mr.Robot", 10));
             testTitles.Add(new Show("South Park", 267));
-
             Catalogue catalogue = new Catalogue();
             Genre act = catalogue.action;
-
             Title title1 = catalogue.comedy.titles[1];
             Genre newGenre = act + title1;
-
             for(int count = 0; count < testTitles.Count; count++)
             {
                 CollectionAssert.Equals(testTitles[count], newGenre.titles[count]);
             }
-
-            
         }
     }
 }
