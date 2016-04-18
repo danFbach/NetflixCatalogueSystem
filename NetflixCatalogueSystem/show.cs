@@ -13,12 +13,9 @@ namespace NetflixCatalogueSystem
         new double rating;
         public Show(string name, int episodeQty)
         {
-
-           //this.currentGenre = currentGenre;
             episodes = newEpisode(episodeQty);
             this.name = name;
-            rating = ratingAverage(episodes);
-                     
+            rating = ratingAverage(episodes);                     
         }
         public double ratingAverage(List<Episode> episodes)
         {
